@@ -1,0 +1,9 @@
+state, setState(...)  =============>  React.useState(...)
+
+componetWillMount     =============>  code before jsx
+
+componentDidMount     =============>  React.useEffect(() => {}, [])
+
+componentDidUpdate    =============>  React.useEffect(() => {}, [])
+
+shouldComponentUpdate =============>  React.memo(Component, () => {})
