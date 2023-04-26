@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import CardListComponent from "./components/card-list/CardListComponent";
-import SearchBoxComponent from "./components/search-box/SearchBoxComponent";
+import CardListComponent from "./components/card-list/CardList.component";
+import SearchBoxComponent from "./components/search-box/SearchBox.component";
 
 function App() {
   const [monsters, setMonsters] = useState([]);
@@ -40,7 +40,7 @@ function App() {
           {showData.length <= 0 ? (
             <p>No data found...</p>
           ) : (
-            <CardListComponent showData={showData} />
+            <CardListComponent monsters={showData} />
           )}
         </>
       )}

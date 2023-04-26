@@ -1,5 +1,5 @@
 import React from "react";
-import './SearchBoxComponent.styles.css'
+import './SearchBox.styles.css'
 
 function SearchBoxComponent({ onChangeHandler, placeholder, searchValue , className}) {
   return (
