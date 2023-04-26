@@ -1,5 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import CardListComponent from "./components/card-list/CardListComponent";
+import SearchBoxComponent from "./components/search-box/SearchBoxComponent";
 
 function App() {
   const [monsters, setMonsters] = useState([]);
@@ -24,25 +26,21 @@ function App() {
     setShowData(matches.length ? matches : []);
   }, [input, monsters]);
 
+  const onSearchChange = (e) => {
+    setInput(e.target.value)
+  }
+
   return (
     <div className='App'>
       {loading ? (
         <p>Loading... Please wait.</p>
       ) : (
         <>
-          <input
-            className='search-box'
-            type='search'
-            placeholder='Search monsters'
-            value={input}
-            onChange={(event) => {
-              setInput(event.target.value);
-            }}
-          />
+          <SearchBoxComponent onChangeHandler={onSearchChange} searchValue={input} placeholder="Search Monsters" className="monsters-search-box"/>
           {showData.length <= 0 ? (
             <p>No data found...</p>
           ) : (
-            showData.map((monster) => <p key={monster.id}>{monster.name}</p>)
+            <CardListComponent showData={showData} />
           )}
         </>
       )}
