@@ -32,6 +32,7 @@ function App() {
 
   return (
     <div className='App'>
+       <h1 className="app-title">Mythical Monsters</h1>
       {loading ? (
         <p>Loading... Please wait.</p>
       ) : (
