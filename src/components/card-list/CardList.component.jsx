@@ -2,7 +2,7 @@ import React from "react";
 import "./CardList.styles.css";
 import CardComponent from "../card-component/Card.component";
 
-function CardListComponent({ monsters, ...props }) {
+function CardListComponent({ monsters }) {
   return (
     <>
       <div className='card-list'>
